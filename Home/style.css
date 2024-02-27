@@ -1,0 +1,42 @@
+
+body {
+    background-image: url("../Images/background.png");
+}
+
+.main h1{
+ color: white;
+}
+
+.presentation {
+    width: 40%;
+    height: 75%;
+    background-color: black;
+    position: fixed;
+    right: 50%;
+    top: 10%;
+    border-radius: 10%;
+    box-shadow: -5px -5px 8px rgba(38, 0, 255, 0.5);
+    opacity: 85%;
+}
+
+.presentation img{
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    right: 70%;
+    top: 10%;
+    border-radius: 100%;
+    border: 10px solid whitesmoke;
+}
+
+/*.menupopup {
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    position: fixed;
+    right: 0;
+    top: 100;
+    border-radius: 100px 0 0 100px;
+    box-shadow: -5px -5px 8px rgba(255, 255, 255, 0.5);
+    opacity: 60%;
+}*/
