@@ -19,17 +19,16 @@
         <title>Dumoulin Batiste</title>
         <link rel="logo" href="https://raw.githubusercontent.com/Batiste0/AboutMe/main/Images/logo.png" type="image/x-icon">
 
-        <link rel="stylesheet" type="text/css" href="home/style.css">
-
-        <script src="home/script.js"></script>
+        <script>
+            window.onload = (() => {
+                if(estAppareilMobile() || estTablette()){
+                    window.location.pathname = "Home/Mobile/index.html";
+                }else{
+                    window.location.pathname = "Home/Computer/index.html";
+                }
+            })
+        </script>
     </head>
     <body>
-        <div class="main">
-            <div id="menuscontenaire"></div>
-            <div class="presentation">
-                <img src="images/pfplogo.jpg" alt="logo">
-                <h1>TEST</h1>
-            </div>
-        </div>
     </body>
 </html>
