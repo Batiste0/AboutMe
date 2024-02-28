@@ -38,11 +38,11 @@ function MenuClick(id){
         break;
         }
         case 2:{
-            window.location.pathname  = "/gamemodding"
+            window.location.pathname = "/electronique"
         break;
         }
         case 3:{
-            window.location.pathname = "/electronique"
+            window.location.pathname = "/gamemodding" 
         break;
         }
         case 4:{
@@ -55,7 +55,7 @@ function MenuClick(id){
     }
 
 }
-function GenerateMenuPopup(color,transparence,position,id){
+function GenerateMenuPopup(imagesrc,color,transparence,position,id){
     /*
     if(!menupopupsparentel) return;
     if(typeof(color) !== Array[Number] || typeof(transparence) !== Number || typeof(position) !== Array[Number]) return;
@@ -76,6 +76,24 @@ function GenerateMenuPopup(color,transparence,position,id){
     popupdiv.style.opacity = String(transparence) + "%"
     popupdiv.style.cursor = "grab";
     popupdiv.style.transition = "width 0.5s ease";
+    // Créer un élément image
+    var img = document.createElement("img");
+    img.src = imagesrc;
+    img.style.width = "100%"; // Définir une largeur maximale de 100% pour s'adapter à la div
+    img.style.height = "100%"; // Définir une hauteur maximale de 100% pour s'adapter à la div
+    img.style.objectFit = "cover"; // Assurer que l'image couvre entièrement la div
+    img.style.float = "left"; // Aligner l'image à gauche
+    img.style.borderTopLeftRadius = String(borderradiussize) + "px"; // Ajouter un rayon au coin supérieur gauche de l'image
+    img.style.borderBottomLeftRadius = String(borderradiussize) + "px"; // Ajouter un rayon au coin inférieur gauche de l'image
+    img.style.maskImage = "linear-gradient(to right, transparent, white)"; // Appliquer le dégradé sur l'image
+    
+    // Ajouter l'image au div popupdiv
+    popupdiv.appendChild(img);
+    // Ajouter popupdiv à votre document ou à un autre élément parent
+    document.body.appendChild(popupdiv);
+    
+    
+
     popupdiv.addEventListener('mouseenter', () => {
         popupdiv.style.width = String(menupopuplargeurpx + 100) + "px"; 
         popupdiv.style.backgroundColor = popupdiv.style.backgroundColor.replace(String(color[2]),String(color[2]-100));
@@ -116,10 +134,10 @@ var menuidx = 0;
 
 window.onload = () => {
     SetupPageGetter();
-    GenerateMenuPopup([153,153,255],80,40,1);
-    GenerateMenuPopup([153,153,255],80,menupopuphauteurpx + 80,2);
-    GenerateMenuPopup([153,153,255],80,menupopuphauteurpx*2 + 120,3);
-    GenerateMenuPopup([153,153,255],80,menupopuphauteurpx*3 + 160,4);
+    GenerateMenuPopup("../../Images/panel/3dprint.jpg",[200,200,200],80,40,1);
+    GenerateMenuPopup("../../Images/panel/electronique.jpg",[200,200,200],80,menupopuphauteurpx + 80,2);
+    GenerateMenuPopup("../../Images/panel/gamemodding.png",[200,200,200],80,menupopuphauteurpx*2 + 120,3);
+    GenerateMenuPopup("../../Images/panel/projects.png",[200,200,200],80,menupopuphauteurpx*3 + 160,4);
     for(mnp of menupopups){
         mnp.style.width = 0;
         mnp.style.height = 0;
