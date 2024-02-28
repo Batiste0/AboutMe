@@ -19,12 +19,58 @@ body {
     opacity: 85%;
 }
 
-.presentation img{
-    width: 20%;
-    height: 20%;
+.main h1{
+    color: whitesmoke;
     position: absolute;
-    right: 70%;
-    top: 10%;
+    right: 50%;
+    font-size: 300%;
+    top: -2%
+}
+
+.presentation h1{
+    background-color: black;
+    color: whitesmoke;
+    position: absolute;
+    right: 40%;
+    font-size: 300%;
+    top: -2%
+}
+
+.presentation h3{
+    background-color: black;
+    color: whitesmoke;
+    position: absolute;
+    right: 25%;
+    font-size: 250%;
+    top: 2%
+}
+
+.presentation h4{
+    background-color: black;
+    color: whitesmoke;
+    position: absolute;
+    right: 50%;
+    font-size: 250%;
+    top: 10%
+}
+
+.presentation h5{
+    background-color: black;
+    color: whitesmoke;
+    position: absolute;
+    font-size: xx-large;
+    top: 30%;
+    left: 1%;
+    width: 98%;
+    height: 50%;
+}
+
+.presentation img{
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    right: 66%;
+    top: 1%;
     border-radius: 100%;
     border: 10px solid whitesmoke;
 }
