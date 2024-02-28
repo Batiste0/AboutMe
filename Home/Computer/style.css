@@ -1,10 +1,37 @@
-
 body {
+    position: relative; /* Pour que le pseudo-élément ::before soit positionné par rapport au body */
     background-image: url("../../Images/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0); 
+    animation: darkenBackground 3s ease-in-out forwards; 
+}
+
+@keyframes darkenBackground {
+    0% {
+        background-color: rgba(0, 0, 0, 0); 
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.65); 
+    }
 }
 
 .main h1{
- color: white;
+    color: whitesmoke;
+    position: absolute;
+    right: 50%;
+    font-size: 300%;
+    top: -2%
 }
 
 .presentation {
@@ -15,20 +42,25 @@ body {
     right: 50%;
     top: 10%;
     border-radius: 10%;
-    box-shadow: -5px -5px 8px rgba(38, 0, 255, 0.5);
-    opacity: 85%;
+    box-shadow: -5px -5px 35px rgba(38, 0, 255, 0.5);
+    opacity: 0; 
+    animation: fadeIn 3s ease forwards;
 }
 
-.main h1{
-    color: whitesmoke;
-    position: absolute;
-    right: 50%;
-    font-size: 300%;
-    top: -2%
+@keyframes fadeIn {
+    0% {
+        width: 10%;
+        height: 20%;
+        opacity: 0; 
+    }
+    100% {
+        width: 40%;
+        height: 80%;
+        opacity: 0.85; 
+    }
 }
 
 .presentation h1{
-    background-color: black;
     color: whitesmoke;
     position: absolute;
     right: 40%;
@@ -37,7 +69,6 @@ body {
 }
 
 .presentation h3{
-    background-color: black;
     color: whitesmoke;
     position: absolute;
     right: 25%;
@@ -46,7 +77,6 @@ body {
 }
 
 .presentation h4{
-    background-color: black;
     color: whitesmoke;
     position: absolute;
     right: 50%;
@@ -55,7 +85,6 @@ body {
 }
 
 .presentation h5{
-    background-color: black;
     color: whitesmoke;
     position: absolute;
     font-size: xx-large;
@@ -65,7 +94,6 @@ body {
 }
 
 .presentation h2{
-    background-color: black;
     color: orangered;
     position: absolute;
     font-size: xx-large;
@@ -75,7 +103,6 @@ body {
     height: 15%;
 }
 .presentation h6{
-    background-color: black;
     color: whitesmoke;
     position: absolute;
     font-size: x-large;
