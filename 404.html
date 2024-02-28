@@ -21,13 +21,51 @@
 
         <script>
             window.onload = (() => {
+                var ntf = document.getElementById("ntftext")
+                setTimeout(() => {
+                    ntf.innerText = "😅 hmmm attend 😅";
+                },1000)
+                setTimeout(() => {
+                    ntf.innerText = "🫣 je te redirige sur le menu 🫣";
+                },3000)
+                setTimeout(() => {
+                    ntf.innerText = "🪄 appelle a la magie du JS 🪄";
+                },6000)
+                setTimeout(() => {
+                    ntf.innerText = "👻 language compiler >>> 👻";
+                },9000)
+                setTimeout(() => {
+                    ntf.innerText = "1️⃣";
+                },8000)
+                setTimeout(() => {
+                    ntf.innerText = "1️⃣ 2️⃣";
+                },8500)
+                setTimeout(() => {
+                    ntf.innerText = "1️⃣ 2️⃣3️⃣";
+                },9000)
+                setTimeout(() => {
+                    ntf.innerText = "1️⃣ 2️⃣3️⃣4️⃣";
+                },9500)
+                setTimeout(() => {
+                    ntf.innerText = "👏👏👏👏👏";
+                },10000)
                 setTimeout(() => {
                     window.location.pathname = "";
-                },5000)
+                },10500)
             });
         </script>
+
+        <style>
+            body{
+                background-color: black;
+            }
+            h1{
+                color: bisque;
+                font-size: 120px;
+            }
+        </style>
     </head>
     <body>
-        <h1>Not Found !</h1>
+        <h1 id="ntftext">Not Found !</h1>
     </body>
 </html>
