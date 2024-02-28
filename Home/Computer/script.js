@@ -1,6 +1,7 @@
 /*setTimeout(() => {
 location.reload()
 },3000)*/
+const ComputerPageMade = true;
 const ratio = [0.372,0.2]// en pixel ratio (this / largeur) ,en pixel ratio (this / hauteur)
 var menupopuplargeurpx = Math.floor(ratio[0] * window.innerWidth); // 
 var menupopuphauteurpx = Math.floor(ratio[1] * window.innerHeight);
@@ -13,6 +14,18 @@ var menupopups = []
 
 var menuposstart = 40;
 
+function CheckRedirection(){
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|iPad|Android|Touch/i.test(navigator.userAgent)){
+        if(ComputerPageMade){
+        window.location.pathname = window.location.pathname.replace("Computer","Mobile");
+        }
+    }else{
+        if(!ComputerPageMade){
+        window.location.pathname = window.location.pathname.replace("Mobile","Computer");
+        }
+    }
+}
+
 function SetupPageGetter(){
     menupopupsparentel = document.getElementById("menuscontenaire");
 }
@@ -21,11 +34,11 @@ function SetupPageGetter(){
 function MenuClick(id){
     switch(id){
         case 1:{
-            window.location.pathname = "/print_conception"
+            window.location.pathname = "/printconception"
         break;
         }
         case 2:{
-            window.location.pathname  = "/Gamemodding"
+            window.location.pathname  = "/gamemodding"
         break;
         }
         case 3:{
