@@ -1,7 +1,7 @@
 /*setTimeout(() => {
 location.reload()
 },3000)*/
-const ComputerPageMade = true;
+const computerPageMade = true;
 const ratio = [0.372,0.2]// en pixel ratio (this / largeur) ,en pixel ratio (this / hauteur)
 var menupopuplargeurpx = Math.floor(ratio[0] * window.innerWidth); // 
 var menupopuphauteurpx = Math.floor(ratio[1] * window.innerHeight);
@@ -16,12 +16,12 @@ var menuposstart = 40;
 
 function CheckRedirection(){
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|iPad|Android|Touch/i.test(navigator.userAgent)){
-        if(ComputerPageMade){
-        window.location.pathname = window.location.pathname.replace("Computer","Mobile");
+        if(computerPageMade){
+        window.location.pathname = window.location.pathname.replace("computer","mobile");
         }
     }else{
-        if(!ComputerPageMade){
-        window.location.pathname = window.location.pathname.replace("Mobile","Computer");
+        if(!computerPageMade){
+        window.location.pathname = window.location.pathname.replace("mobile","computer");
         }
     }
 }
@@ -34,19 +34,19 @@ function SetupPageGetter(){
 function MenuClick(id){
     switch(id){
         case 1:{
-            window.location.pathname = "/printconception"
+            window.location.pathname = window.location.pathname.replace("home","printconception")
         break;
         }
         case 2:{
-            window.location.pathname = "/electronique"
+            window.location.pathname = window.location.pathname.replace("home","electronique")
         break;
         }
         case 3:{
-            window.location.pathname = "/gamemodding" 
+            window.location.pathname = window.location.pathname.replace("home","gamemodding")
         break;
         }
         case 4:{
-            window.location.pathname  = "/projects"
+            window.location.pathname = window.location.pathname.replace("home","projects")
         break;
         }
         default:{
