@@ -1,7 +1,7 @@
 /*setTimeout(() => {
 location.reload()
 },3000)*/
-const computerPageMade = true;
+const computerPageMade = false;
 const ratio = [0.372,0.2]// en pixel ratio (this / largeur) ,en pixel ratio (this / hauteur)
 var menupopuplargeurpx = Math.floor(ratio[0] * window.innerWidth); // 
 var menupopuphauteurpx = Math.floor(ratio[1] * window.innerHeight);

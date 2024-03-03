@@ -132,6 +132,7 @@ var menuidx = 0;
 }
 
 window.onload = () => {
+    CheckRedirection();
     SetupPageGetter();
     GenerateMenuPopup("../../Images/panel/3dprint.jpg",[200,200,200],95,40,1);
     GenerateMenuPopup("../../Images/panel/electronique.jpg",[200,200,200],95,menupopuphauteurpx + 80,2);

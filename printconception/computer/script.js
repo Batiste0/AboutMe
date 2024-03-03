@@ -2,15 +2,6 @@
 location.reload()
 },3000)*/
 const computerPageMade = true;
-const ratio = [0.372,0.2]// en pixel ratio (this / largeur) ,en pixel ratio (this / hauteur)
-var menupopuplargeurpx = Math.floor(ratio[0] * window.innerWidth); // 
-var menupopuphauteurpx = Math.floor(ratio[1] * window.innerHeight);
-const basehauteur = menupopuphauteurpx;
-var borderradiussize = Math.floor(menupopuphauteurpx / 2);
-
-const color_shadow_ratio = 0.5;
-var menupopupsparentel = null;
-var menupopups = []
 
 var menuposstart = 40;
 
@@ -26,35 +17,6 @@ function CheckRedirection(){
     }
 }
 
-function SetupPageGetter(){
-    menupopupsparentel = document.getElementById("menuscontenaire");
-}
-
-
-function MenuClick(id){
-    switch(id){
-        case 1:{
-            window.location.pathname = window.location.pathname.replace("home","printconception")
-        break;
-        }
-        case 2:{
-            window.location.pathname = window.location.pathname.replace("home","electronique")
-        break;
-        }
-        case 3:{
-            window.location.pathname = window.location.pathname.replace("home","gamemodding")
-        break;
-        }
-        case 4:{
-            window.location.pathname = window.location.pathname.replace("home","projects")
-        break;
-        }
-        default:{
-            console.log("MENUCLickManager: eror,unknow id",id)
-        }
-    }
-
-}
 function GenerateMenuPopup(imagesrc,color,transparence,position,id){
     /*
     if(!menupopupsparentel) return;
