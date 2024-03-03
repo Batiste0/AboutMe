@@ -14,6 +14,13 @@ function CheckRedirection(){
     }
 }
 
+function gohome(){
+    if(computerPageMade){
+        window.location.pathname = "home/computer/index.html";
+    }else{
+        window.location.pathname = "home/mobile/index.html"; 
+    }
+}
 
 window.onload = function() {
     CheckRedirection();
