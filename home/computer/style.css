@@ -35,8 +35,8 @@ body::before {
 }
 
 .presentation {
-    width: 40%;
-    height: 80%;
+    width: 40vw; /* Utilisation de vw pour une largeur relative à la largeur de la fenêtre */
+    height: 80vh; /* Utilisation de vh pour une hauteur relative à la hauteur de la fenêtre */
     background-color: black;
     position: fixed;
     right: 50%;
@@ -45,6 +45,7 @@ body::before {
     box-shadow: -5px -5px 35px rgba(38, 0, 255, 0.5);
     opacity: 0; 
     animation: fadeIn 3s ease forwards;
+    text-align: center;
 }
 
 @keyframes fadeIn {
@@ -60,66 +61,45 @@ body::before {
     }
 }
 
-.presentation h1{
-    color: whitesmoke;
+.presentation img {
+    width: 10vw; /* Utilisation de vw pour une taille d'image relative à la largeur de la fenêtre */
+    height: 10vw; /* Utilisation de vw pour une taille d'image relative à la largeur de la fenêtre */
     position: absolute;
-    right: 40%;
-    font-size: 300%;
-    top: -2%
-}
-
-.presentation h3{
-    color: whitesmoke;
-    position: absolute;
-    right: 25%;
-    font-size: 250%;
-    top: 2%
-}
-
-.presentation h4{
-    color: whitesmoke;
-    position: absolute;
-    right: 50%;
-    font-size: 250%;
-    top: 10%
-}
-
-.presentation h5{
-    color: whitesmoke;
-    position: absolute;
-    font-size: xx-large;
-    top: 30%;
-    left: 1%;
-    height: 15%;
-}
-
-.presentation h2{
-    color: orangered;
-    position: absolute;
-    font-size: xx-large;
-    top: 70%;
-    left: 1%;
-   
-    height: 15%;
-}
-.presentation h6{
-    color: whitesmoke;
-    position: absolute;
-    font-size: x-large;
-    top: 85%;
-    left: 35%;
-}
-
-
-.presentation img{
-    width: 30%;
-    height: 30%;
-    position: absolute;
-    right: 66%;
+    right: 70%;
     top: 1%;
     border-radius: 100%;
     border: 10px solid whitesmoke;
 }
+
+.presentation h3 {
+    font-size: 2vw; /* Utilisation de vw pour une taille de police relative à la largeur de la fenêtre */
+    height: 5vh; /* Utilisation de vh pour une hauteur relative à la hauteur de la fenêtre */
+    color:whitesmoke;
+}
+
+.presentation h4 {
+    font-size: 2vw; /* Utilisation de vw pour une taille de police relative à la largeur de la fenêtre */
+    height: 5vh; /* Utilisation de vh pour une hauteur relative à la hauteur de la fenêtre */
+    color:whitesmoke;
+}
+
+.presentation h5 {
+    font-size: 2vw; /* Utilisation de vw pour une taille de police relative à la largeur de la fenêtre */
+    height: 26vh; /* Utilisation de vh pour une hauteur relative à la hauteur de la fenêtre */
+    color:whitesmoke;
+}
+
+.presentation h2 {
+    font-size: 1.6vw; /* Utilisation de vw pour une taille de police relative à la largeur de la fenêtre */
+    height: 3vh; /* Utilisation de vh pour une hauteur relative à la hauteur de la fenêtre */
+    color:orangered;
+}
+
+.presentation h6 {
+    font-size: 2vw; /* Utilisation de vw pour une taille de police relative à la largeur de la fenêtre */
+    color:whitesmoke;
+}
+
 
 /*.menupopup {
     width: 500px;
