@@ -51,7 +51,7 @@ body::before {
     min-width: 100%;
     min-height: 100%;
     z-index: -2; /* Mettre la vidéo en arrière-plan par rapport au texte */
-  }
+}
   
 .content {
     position: relative;
@@ -66,6 +66,8 @@ body::before {
     position:fixed;
     background-color: rgba(0, 0, 0, 0); 
     animation: darkenBackground 3s ease-in-out forwards; 
+    border-radius: 5%;
+    box-shadow: -5px -5px 35px rgba(255, 255, 255, 0.5);
 }
 
 .contexte .description h1{
@@ -98,8 +100,13 @@ body::before {
     left: 50%;
     position:fixed;
     background-color: rgba(0, 0, 0, 0); 
+    border-radius: 5%;
     animation: darkenBackground 3s ease-in-out forwards; 
+    box-shadow: -5px -5px 60px rgba(255, 255, 255, 0.615);
+}
 
+.viewport .nav{
+    top:50%
 }
 
 @keyframes vviewportdivanim {

@@ -114,21 +114,24 @@ function GenerateMenuPopup(imagesrc,color,transparence,position,id){
     return popupdiv;
 }
 
-
-window.onresize = () => {
+function Resize(){
 menupopuplargeurpx = Math.floor(ratio[0] * window.innerWidth);
 menupopuphauteurpx = Math.floor(ratio[1] * window.innerHeight);
 borderradiussize = Math.floor(menupopuphauteurpx / 2);
 //console.log(window.innerWidth,menupopuplargeurpx,window.innerHeight,menupopuphauteurpx)
 var menuidx = 0;
- for(mnp of menupopups){
+for(mnp of menupopups){
     mnp.style.width = menupopuplargeurpx;
     t = mnp.style.height
     mnp.style.height = menupopuphauteurpx;
     mnp.style.top = menupopuphauteurpx*menuidx + menuposstart*(menuidx+1)
     mnp.style.borderRadius = String(borderradiussize) + "px 0 0 " + String(borderradiussize) + "px";
     menuidx++;
- }
+}
+}
+
+window.onresize = () => {
+Resize();
 }
 
 window.onload = () => {
