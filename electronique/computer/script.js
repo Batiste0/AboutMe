@@ -89,7 +89,7 @@ window.onload = function() {
     video.oncanplay = function() {
       setTimeout(() => background.style.display = 'none',3500) 
     };
-    DisplayVideo(0).then(() => {
+    DisplayVideo(1).then(() => {
         setTimeout(() => {
             DisplayImage(0).then(() => {
                 setTimeout(() => {
