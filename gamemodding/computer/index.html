@@ -24,17 +24,36 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <div class="main">
-            <h1>Bienvenue</h1>
-            <div id="menuscontenaire"></div>
-            <div class="presentation">
-                <img src="../../Images/logo.png" alt="logo">
-                <h3>Batiste Dumoulin</h3>
-                <h4>17 ans</h4>
-                <h5>Je m'appelle Batiste, passionné de robotique depuis l'âge de 9 ans, rêvant de faire de cette passion un métier.<br><br>Je porte énormément d'intérêt à la programmation informatique mais aussi aux mathématiques et à la physique.</h5>
-                <h2>J'ai conçu ce site pour présenter mes projets que vous découvrirez en cliquant sur les rubriques présentées à droite</h2>
-                <h6>Merci de votre visite !</h6>
+    <div id="background"><img src="../../Images/electronique/font.jpg" alt="Image de fond"></div>
+        <video id="fondvideo" autoplay muted loop>
+            <source src="../../Videos/electronique/font.mp4" type="video/mp4">
+        </video>
+
+    <div class="content">
+        <div class="contexte">
+            <button onclick="gohome()">
+                <img src="../../Images/homelogo.png" alt="Retour a la page d'acceuille">
+            </button>
+            <div class="description">
+                <h1>Game Modding</h1>
+                <p>J'ai toujorus aimer pouvoir modifir libremeent des logiciels,Grace a une communauté anglophone j'ia pu apprendre a faire du reverse engineering sur le jeu connut Fortnite <br>Le but était de pouvoir rejouer en ligne au anciennes version du jeu (un très gros travail étant donné qu'ont devaient 'transormer' une application client en server)
+                <br>Ont est même aller jusqu'à modder nos Nitendo Switchs ! 
+                </p>
             </div>
         </div>
+        <div class="viewport">
+            <div class="viever">
+            </div>
+            <div id="mainav" class="nav"> 
+                <img id="displayer" alt="illustration" src="../../Images/background.png">
+                <div class="button-container">
+                    <button onclick="PreviousEl()"><</button>
+                    <button onclick="NextEl()">></button>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    </div>
     </body>
 </html>

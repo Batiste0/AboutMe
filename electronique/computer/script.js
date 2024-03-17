@@ -29,17 +29,17 @@ var imgdir = "../../Images/electronique/";
 async function DisplayVideo(id){
 return new Promise(r => {
 if(actualdisplayer === 0){
+actualdisplayer = 1;
 var oldel = document.getElementById("displayer");
 var newVideoEL = document.createElement("video");
 newVideoEL.muted = true;
 newVideoEL.autoplay = true;
 newVideoEL.id = "displayer";
 newVideoEL.alt = "illustration";
-newVideoEL.src = videodir + String(id) + ".mp4";
+newVideoEL.src = videodir + String(id).replace(",",".") + ".mp4";
 newVideoEL.removeAttribute("controls");
 oldel.parentNode.replaceChild(newVideoEL, oldel);
-actualdisplayer = 1;
-newVideoEL.addEventListener("play", function() {
+newVideoEL.addEventListener("ended", function() {
     return r();
 });
 }else{
@@ -48,8 +48,11 @@ oldel.muted = true;
 oldel.autoplay = true;
 oldel.id = "displayer";
 oldel.alt = "illustration";
-oldel.src = videodir + String(id) + ".mp4";
-oldel.addEventListener("play", function() {
+oldel.src = videodir + String(id).replace(",",".") + ".mp4";
+/*oldel.addEventListener("play", function() {
+    return r();
+});*/
+oldel.addEventListener("ended", function() {
     return r();
 });
 }
@@ -60,26 +63,67 @@ oldel.addEventListener("play", function() {
 async function DisplayImage(id){
 return new Promise(r => {
     if(actualdisplayer === 1){
+    actualdisplayer = 0;
     var oldel = document.getElementById("displayer");
     var newImgEL = document.createElement("img");
     newImgEL.id = "displayer";
     newImgEL.alt = "illustration";
-    newImgEL.src = imgdir + String(id) + ".jpg";
+    newImgEL.src = imgdir + String(id).replace(",",".") + ".jpg";
     newImgEL.removeAttribute("controls");
     oldel.parentNode.replaceChild(newImgEL, oldel);
     newImgEL.addEventListener("load", function() {
-        return r();
+        setTimeout(() => {
+            return r()
+        },5000)
     });
     }else{
     var oldel = document.getElementById("displayer");
     oldel.id = "displayer";
     oldel.alt = "illustration";
-    oldel.src = imgdir + String(id) + ".jpg";
+    oldel.src = imgdir + String(id).replace(",",".") + ".jpg";
     oldel.addEventListener("load", function() {
-        return r();
+        setTimeout(() => {
+            return r()
+        },5000)
     });
     }
     })
+}
+
+var  displayorder = [{t:1,id:1},{t:1,id:0},{t:0,id:6},{t:0,id:3},{t:0,id:2},{t:0,id:4},{t:0,id:1}];
+var actualdisplay = 0;
+
+var autodisplay = true;
+
+async function Display(displayelid){
+    actualdisplay = displayelid;
+    if(displayorder[displayelid].t === 0){
+        await DisplayImage(displayorder[displayelid].id);
+    }else if( displayorder[displayelid].t === 1){
+        await DisplayVideo(displayorder[displayelid].id);
+    }
+}
+
+function AutoDisplayRunner(id){
+    if(!autodisplay) return;
+    if(id > (displayorder - 1)) return AutoDisplayRunner(0);
+    Display(id).then(() => {
+        if(autodisplay) AutoDisplayRunner(id + 1);
+    })
+}
+
+function NextEl(){
+    autodisplay = false;
+    actualdisplay += 1;
+    if(actualdisplay > (displayorder.length - 1)) actualdisplay = 0;
+    Display(actualdisplay);
+}
+
+function PreviousEl(){
+    autodisplay = false;
+    actualdisplay -= 1;
+    if(actualdisplay < 0) actualdisplay = (displayorder.length - 1);
+    Display(actualdisplay);
 }
 
 window.onload = function() {
@@ -89,14 +133,6 @@ window.onload = function() {
     video.oncanplay = function() {
       setTimeout(() => background.style.display = 'none',3500) 
     };
-    DisplayVideo(1).then(() => {
-        setTimeout(() => {
-            DisplayImage(0).then(() => {
-                setTimeout(() => {
-                    DisplayImage(1)
-                },2000)
-            })
-        },2000)
-    })
-  };
+    AutoDisplayRunner(0);
+};
   

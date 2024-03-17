@@ -72,10 +72,13 @@ body::before {
 
 .contexte .description h1{
     color: azure;
+    font-size: 2vw;
+    height: 5vh; 
 }
 .contexte .description p{
     color: azure;
-    font-size: x-large;
+    font-size: 1.5vw;
+    height: 5vh; 
 }
 
 .contexte button{
@@ -90,7 +93,8 @@ body::before {
 
 .contexte button img {
     display: block; 
-    width: 40%; 
+    width: 10vw; 
+    height: 10vw; 
     height: auto; 
 }
 

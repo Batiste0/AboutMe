@@ -24,9 +24,38 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <div class="presentation">
+    <div id="background"><img src="../../Images/electronique/font.jpg" alt="Image de fond"></div>
+        <video id="fondvideo" autoplay muted loop>
+            <source src="../../Videos/electronique/font.mp4" type="video/mp4">
+        </video>
+
+    <div class="content">
+        <div class="contexte">
+            <button onclick="gohome()">
+                <img src="../../Images/homelogo.png" alt="Retour a la page d'acceuille">
+            </button>
+            <div class="description">
+                <h1>Impression 3D</h1>
+                <p>Cela fait peut de temps que j'ai eu la chance d'aquérir une imprimante 3D.Grace a c'elle-ci je peux concevoir et imprimmer pour donenr vie a mes projets.
+                <br>J'ai donc commencer a aquérir des connaissances en modélisation de pièces en 3D jusqu'à l'impression.Je pourrait donc grace a elle donner vie a mes projet électronique.
+                <br>Elle me permet d'imprimmer mes maquettes 3D ou de faires des petits cadeaux personaliser a mes amis
+                </p>
+            </div>
         </div>
-        <div class="imagesviewer">
+        <div class="viewport">
+            <div class="viever">
+
+            </div>
+            <div id="mainav" class="nav"> 
+                <img id="displayer" alt="illustration" src="../../Images/background.png">
+                <div class="button-container">
+                    <button onclick="PreviousEl()"><</button>
+                    <button onclick="NextEl()">></button>
+                </div>
+            </div>
         </div>
+    </div>
+        
+    </div>
     </body>
 </html>
