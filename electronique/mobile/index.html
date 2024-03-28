@@ -18,23 +18,21 @@
         <meta name="keywords" content="biographie,projets,develloper">
         <title>Dumoulin Batiste</title>
         <link rel="logo" href="https://raw.githubusercontent.com/Batiste0/AboutMe/main/Images/logo.png" type="image/x-icon">
-
-        <link rel="stylesheet" type="text/css" href="style.css">
-
-        <script src="script.js"></script>
+        <script>
+        function CheckRedirection(){
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|iPad|Android|Touch/i.test(navigator.userAgent)){
+                window.location.pathname = "home/mobile/index.html";
+            }else{
+                window.location.pathname = "home/computer/index.html";
+            }
+        }
+        window.onload = (() => {
+            CheckRedirection();
+        });
+        </script>
     </head>
     <body>
-        <div class="main">
-            <h1>Bienvenue</h1>
-            <div id="menuscontenaire"></div>
-            <div class="presentation">
-                <img src="../../Images/logo.png" alt="logo">
-                <h3>Batiste Dumoulin</h3>
-                <h4>17 ans</h4>
-                <h5>Je m'appelle Batiste, passionné de robotique depuis l'âge de 9 ans, rêvant de faire de cette passion un métier.<br><br>Je porte énormément d'intérêt à la programmation informatique mais aussi aux mathématiques et à la physique.</h5>
-                <h2>J'ai conçu ce site pour présenter mes projets que vous découvrirez en cliquant sur les rubriques présentées à droite</h2>
-                <h6>Merci de votre visite !</h6>
-            </div>
-        </div>
+            <h1>Bonjour/ Bonsoir, la version du site n'est pas finaliser pour téléphone portable / tablette <br> Merci de bien vouloir le consulter sur un Ordinateur</h1>
+            <h2>Cordiallement Dumoulin Batiste</h2>
     </body>
 </html>
