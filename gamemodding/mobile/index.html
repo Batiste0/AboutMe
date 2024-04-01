@@ -20,9 +20,7 @@
         <link rel="logo" href="https://raw.githubusercontent.com/Batiste0/AboutMe/main/Images/logo.png" type="image/x-icon">
         <script>
         function CheckRedirection(){
-            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|iPad|Android|Touch/i.test(navigator.userAgent)){
-                window.location.pathname = "home/mobile/index.html";
-            }else{
+            if(!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|iPad|Android|Touch/i.test(navigator.userAgent))){
                 window.location.pathname = "home/computer/index.html";
             }
         }
